@@ -1,6 +1,6 @@
-package org.example.designpatterns;
+package org.example.designpatterns.builder;
 
-public class User {
+public class BuilderPattern {
 
     private final String firstName; // required
     private final String lastName; // required
@@ -8,7 +8,7 @@ public class User {
     private final String phone; // optional
     private final String address; // optional
 
-    private User(UserBuilder builder) {
+    private BuilderPattern(UserBuilder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.age = builder.age;
@@ -38,7 +38,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User: " + this.firstName + ", " + this.lastName + ", " + this.age + ", " + this.phone + ", " + this.address;
+        return "BuilderPattern: " + this.firstName + ", " + this.lastName + ", " + this.age + ", " + this.phone + ", " + this.address;
     }
 
     public static class UserBuilder {
@@ -68,9 +68,9 @@ public class User {
             return this;
         }
 
-        public User build() {
-            User user = new User(this);
-            return user;
+        public BuilderPattern build() {
+            BuilderPattern builderPattern = new BuilderPattern(this);
+            return builderPattern;
         }
     }
 }
