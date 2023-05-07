@@ -1,13 +1,15 @@
 package org.example;
 
-import org.example.designpatterns.Singleton;
+import org.example.designpatterns.User;
 
 public class Main {
     public static void main(String[] args) {
-        Singleton singleton = Singleton.getInstance();
-        System.out.println(singleton.hashCode());
+        User user = new User.UserBuilder("John", "Doe")
+                .age(30)
+                .phone("1234567")
+                .address("Fake address 1234")
+                .build();
 
-        Singleton singleton1  = Singleton.getInstance();
-        System.out.println(singleton1.hashCode());
+        System.out.println(user);
     }
 }
