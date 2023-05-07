@@ -1,4 +1,4 @@
-package org.example.git1;
+package org.example.git;
 
 public class GitLesson2 {
 
